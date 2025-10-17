@@ -2,7 +2,7 @@
 
 # 1) Setup linux dependencies
 su -c 'apt-get update && apt-get install -y sudo'
-sudo apt-get install -y less nano htop ncdu nvtop lsof rsync btop jq
+sudo apt-get install -y less vim htop ncdu nvtop lsof rsync btop jq
 
 # 2) Setup virtual environment
 curl -LsSf https://astral.sh/uv/install.sh | sh
@@ -15,7 +15,7 @@ python -m ipykernel install --user --name=venv # so it shows up in jupyter noteb
 
 # 3) Setup dotfiles and ZSH
 mkdir git && cd git
-git clone https://github.com/lu-christina/dotfiles.git
+git clone git@github.com:lu-christina/dotfiles.git
 cd dotfiles
 ./install.sh --zsh --tmux
 chsh -s /usr/bin/zsh
@@ -23,7 +23,7 @@ chsh -s /usr/bin/zsh
 cd ..
 
 # task spooler
-git clone https://github.com/justanhduc/task-spooler.git
+git clone git@github.com:justanhduc/task-spooler.git
 cd task-spooler
 ./install_cmake
 export CUDA_HOME=/usr/local/cuda-12.8

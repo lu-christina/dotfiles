@@ -10,7 +10,7 @@ source $HOME/.local/bin/env
 uv python install 3.11
 uv venv
 source .venv/bin/activate
-uv pip install ipykernel simple-gpu-scheduler # very useful on runpod with multi-GPUs https://pypi.org/project/simple-gpu-scheduler/
+uv pip install ipykernel huggingface_hub[cli]
 python -m ipykernel install --user --name=venv # so it shows up in jupyter notebooks within vscode
 
 # 3) Setup dotfiles and ZSH
@@ -22,5 +22,13 @@ chsh -s /usr/bin/zsh
 ./deploy.sh
 cd ..
 
+# task spooler
+git clone https://github.com/justanhduc/task-spooler.git
+cd task-spooler
+./install_cmake
+export CUDA_HOME=/usr/local/cuda-12.8
+cd ..
+
 # 4) Setup github
 echo ./scripts/setup_github.sh "christina.ty.lu@gmail.com" "Christina Lu"
+chmod +x ./git/dotfiles/runpod/setup_github.sh

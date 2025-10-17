@@ -5,7 +5,7 @@
 # Input arguments
 email=${1:-"christina.ty.lu@gmail.com"}
 name=${2:-"Christina Lu"}
-github_url=${3:-""}
+github_url=${3:-"git@github.com:lu-christina/persona-subspace.git"}
 
 # 0) Setup git
 git config --global user.email "$email"
@@ -24,5 +24,5 @@ if [ -n "$github_url" ]; then
     git clone "$github_url"
     repo_name=$(basename "$github_url" .git)
     cd "$repo_name"
-    uv pip install -r requirements.txt
+    uv sync
 fi

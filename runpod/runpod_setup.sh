@@ -30,5 +30,5 @@ export CUDA_HOME=/usr/local/cuda-12.8
 cd ..
 
 # 4) Setup github
-echo ./scripts/setup_github.sh "christina.ty.lu@gmail.com" "Christina Lu"
+echo ./git/dotfiles/runpod/setup_github.sh
 chmod +x ./git/dotfiles/runpod/setup_github.sh

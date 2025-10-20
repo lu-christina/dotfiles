@@ -23,6 +23,13 @@ done
 cd /root/git
 git clone git@github.com:GallagherCommaJack/chatspace
 
+# task spooler
+git clone git@github.com:justanhduc/task-spooler.git
+cd task-spooler
+./install_cmake
+export CUDA_HOME=/usr/local/cuda-12.8
+cd ..
+
 # 2) Project specific setup (if github_url is provided)
 if [ -n "$github_url" ]; then
     git clone "$github_url"

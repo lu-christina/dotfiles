@@ -22,13 +22,6 @@ chsh -s /usr/bin/zsh
 ./deploy.sh
 cd ..
 
-# task spooler
-git clone git@github.com:justanhduc/task-spooler.git
-cd task-spooler
-./install_cmake
-export CUDA_HOME=/usr/local/cuda-12.8
-cd ..
-
 # 4) Setup github
 echo ./git/dotfiles/runpod/setup_github.sh
 chmod +x ./git/dotfiles/runpod/setup_github.sh
